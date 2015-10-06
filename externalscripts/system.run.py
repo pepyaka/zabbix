@@ -93,12 +93,13 @@ def zabbix_get(host='localhost', port=10050, key='agent.hostname'):
 
 def main():
     global verbosity
+    # go to externalchecks dir
+    os.chdir(os.path.dirname(os.environ['_']))
     args = parse_args()
     verbosity = args.verbosity
     if verbosity > 0:
         print 'ARGS: {0}'.format(args)
-    if verbosity > 1:
-        print os.environ
+        print 'CWD: {0}'.format(os.getcwd())
     exe_name = os.path.basename(args.exec_path)
     if len(args.exec_args) > 0:
         exe_args = '"' + '" "'.join(args.exec_args) + '"'
