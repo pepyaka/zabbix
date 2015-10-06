@@ -98,7 +98,10 @@ def main():
     if verbosity > 0:
         print 'ARGS: {0}'.format(args)
     exe_name = os.path.basename(args.exec_path)
-    exe_args = '"' + '" "'.join(args.exec_args) + '"'
+    if len(args.exec_args) > 0:
+        exe_args = '"' + '" "'.join(args.exec_args) + '"'
+    else:
+        exe_args = ''
     exe_content, exe_md5 = check_exe_md5(args.exec_path)
     vfs_md5_key = 'vfs.file.md5sum[{0}/{1}]'.format(exe_dir, exe_name)
     vfs_md5 = zabbix_get(args.host, args.port, vfs_md5_key)
