@@ -97,6 +97,8 @@ def main():
     verbosity = args.verbosity
     if verbosity > 0:
         print 'ARGS: {0}'.format(args)
+    if verbosity > 1:
+        print os.environ
     exe_name = os.path.basename(args.exec_path)
     if len(args.exec_args) > 0:
         exe_args = '"' + '" "'.join(args.exec_args) + '"'
