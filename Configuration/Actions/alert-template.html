@@ -80,7 +80,7 @@ a {color: #348eda; text-decoration: underline;}
 .severity-Information {color: Sky;}
 .text-OK{color: Green;}
 .text-PROBLEM {color: Red;}
-pre {display: block; padding: 5px; margin: 0 0 10px; font-size: 13px; line-height: 1.42857143; color: #333; word-break: break-all; word-wrap: break-word; background-color: #f5f5f5; border: 1px solid #ccc; border-radius: 2px;min-width:100px;}
+pre {display: inline-block; padding: 5px; margin: 0 0 10px; line-height: 1.42857143; color: #333; font-family: monospace;}
 small {font-size: smaller;}
 
 </style>
@@ -122,10 +122,8 @@ small {font-size: smaller;}
                     <table>
                       <tr>
                         <td>
-                          <strong>{ITEM.NAME}: </strong>
-                        </td>
-                        <td>
-                            <pre>{ITEM.VALUE}</pre>
+                          <strong>{ITEM.NAME}:</strong>
+                          <pre>{ITEM.VALUE}</pre>
                         </td>
                       </tr>
                     </table>
